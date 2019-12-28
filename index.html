@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock Paper Scissors Battle</title>
+	</head>
+
+	<body>
+
+		<script type/="text/javascript">
+			
+		//Computer makes random choice
+		function userPlay() {
+			let userInput = prompt("What is your choice? ");
+
+			console.log('you chose ' + userInput);
+			return userInput;
+		}
+
+		function computerPlay() {
+			let computerOptions = ['Rock', 'Paper', 'Scissors'];
+			let randomChoice = Math.floor(Math.random() * computerOptions.length);
+
+			return computerOptions[randomChoice];
+		}
+
+		function playRound(userChoice, computerChoice) {
+			if (userChoice == 'Rock') {
+				if (computerChoice == 'Paper') {
+					console.log('You lose! Paper beats rock.');
+				} else if (computerChoice == 'Scissors') {
+					console.log('You win, nice! Rock beats scissors.');
+				} else {
+					console.log ("it's a tie! Try again!");
+				}
+
+			} else if (userChoice == 'Scissors') {
+				if (computerChoice == 'Rock') {
+					console.log('You lose! Rock beats scissors.');
+				} else if (computerChoice == 'Paper') {
+					console.log('You win, nice! Scissors beats paper.');
+				} else {
+					console.log ("it's a tie! Try again!");
+				}
+
+			} else {
+				if (computerChoice == 'Scissors') {
+					console.log('You lose! Scissors beats paper.');
+				} else if (computerChoice == 'Rock') {
+					console.log('You win, nice! Paper beats rock.');
+				} else {
+					console.log ("it's a tie! Try again!");
+				}
+
+			} 
+
+		}
+
+		//userPlay();
+		//computerPlay();
+		playRound(userPlay(), computerPlay());
+
+
+		</script>
+	</body>
+
+</html>
